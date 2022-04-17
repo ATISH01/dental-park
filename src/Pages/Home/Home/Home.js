@@ -1,5 +1,6 @@
 
 import img from '../../../img/portrait-smiling-handsome-male-doctor-man-min-removebg-preview.png'
+import Footer from '../Footer/Footer';
 import Services from '../Services/Services';
 
 import './Home.css'
@@ -19,6 +20,7 @@ const Home = () => {
             </div>
            </div>
         <Services></Services>
+        <Footer></Footer>
         </div>
     );
 };
