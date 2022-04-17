@@ -1,0 +1,21 @@
+.banner{
+    background-color: rgb(156, 245, 245);
+}
+.banner img{
+    height: 500px;
+}
+.tooth{
+    background-image: url("../../../img/tooth2.png");
+    background-size:60%;
+    background-repeat: no-repeat;
+    
+}
+.margin{
+    margin-top: 60px;
+    margin-left: 490px;
+}
+.margin h1{
+    margin-bottom: 10%;
+    font-size:60px;
+    font-weight:700 ;
+}
