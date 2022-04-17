@@ -8,9 +8,11 @@ const SignUp = () => {
     const navigate = useNavigate();
     const [signInWithTwitter, twUser] = useSignInWithTwitter(auth);
      const [agree, setAgree] = useState(false);
+     
+      
     const [
         createUserWithEmailAndPassword, user
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -59,11 +61,13 @@ const SignUp = () => {
             return;
         }
         createUserWithEmailAndPassword(userInfo.email, userInfo.password)
+        
         console.log(user);
 
     }
     const HandlesignInWithTwitter =()=>{
         signInWithTwitter();
+        
     }
     return (
         <div className='container'>
@@ -78,18 +82,18 @@ const SignUp = () => {
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control onChange={handleEmail} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="email" placeholder="Email" />
+                    <Form.Control onChange={handleEmail} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="email" placeholder="Email" required/>
                     {errors?.email && <p>{errors.email}</p>}
                 </Form.Group>
 
                 <Form.Group className="mb-2" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onBlur={handlePassword} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="password" placeholder="Password" />
+                    <Form.Control onBlur={handlePassword} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="password" placeholder="Password" required/>
                     {errors?.password && <p>{errors.password}</p>}
                 </Form.Group>
                 <Form.Group className="mb-2" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control onBlur={handleConfirmPass} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="password" placeholder="Confirm Password" />
+                    <Form.Control onBlur={handleConfirmPass} className='border-0 bg-success p-2 text-dark bg-opacity-10' type="password" placeholder="Confirm Password" required/>
                     {errors?.confirmPass && <p>{errors.confirmPass}</p>}
                 </Form.Group>
                 <input onClick={() => setAgree(!agree)} type="checkbox" />

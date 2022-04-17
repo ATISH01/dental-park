@@ -19,7 +19,7 @@ const Service = ({service}) => {
                     <Card.Text>
                         Lorem ipsum dolor sit amet consectetur!
                     </Card.Text>
-                    <Button onClick={handleButton} variant="primary">Book Now</Button>
+                    <Button className='mx-auto d-block' onClick={handleButton} variant="primary">Book Now</Button>
                 </Card.Body>
             </Card>
         </div>
