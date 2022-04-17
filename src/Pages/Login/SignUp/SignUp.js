@@ -1,11 +1,14 @@
 import React, {useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebse.init'
 
 const SignUp = () => {
     const [agree, setAgree] = useState(false);
-    
+    const [
+        createUserWithEmailAndPassword,
+        ] = useCreateUserWithEmailAndPassword(auth);
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -51,7 +54,8 @@ const SignUp = () => {
             setErrors({ ...errors, confirmPass: "Password Not Matched" })
             return;
         }
-       
+        createUserWithEmailAndPassword(userInfo.email,userInfo.password)
+        console.log(userInfo);
         
     }
     return (
@@ -82,7 +86,7 @@ const SignUp = () => {
                     {errors?.confirmPass && <p>{errors.confirmPass}</p>}
                 </Form.Group>
                 <input onClick={() => setAgree(!agree)} type="checkbox" />
-
+                <label className={`${agree ? '': 'text-danger'}`} htmlFor="terms">Accept all terms and condition</label>
                 <Button disabled={!agree} className='w-100 my-3' variant="primary" type="submit">
                     Sign Up
                 </Button>
