@@ -1,13 +1,14 @@
 import React, {useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init'
 
 const SignUp = () => {
+    const navigate = useNavigate();
     const [agree, setAgree] = useState(false);
     const [
-        createUserWithEmailAndPassword,
+        createUserWithEmailAndPassword,user
         ] = useCreateUserWithEmailAndPassword(auth);
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -20,7 +21,9 @@ const SignUp = () => {
         general: "",
     })
     
-
+    if(user){
+        navigate('/')
+    }
     const handleEmail = event => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(event.target.value);
@@ -55,7 +58,7 @@ const SignUp = () => {
             return;
         }
         createUserWithEmailAndPassword(userInfo.email,userInfo.password)
-        console.log(userInfo);
+        console.log(user);
         
     }
     return (
