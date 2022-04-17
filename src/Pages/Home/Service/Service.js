@@ -11,7 +11,7 @@ const Service = ({service}) => {
     }
     return (
         <div className='col-md-4 mt-2 '>
-            <Card className='w-75 mt-4 mx-auto border-0 shadow g-0 bg-white rounded hover-card'>
+            <Card className='w-75 mt-4 mx-auto border-0 g-0 bg-white rounded hover-card'>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{serviceName}</Card.Title>

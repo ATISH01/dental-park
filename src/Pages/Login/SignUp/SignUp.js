@@ -1,15 +1,16 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init'
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [agree, setAgree] = useState(false);
+    const [signInWithTwitter] = useSignInWithTwitter(auth);
+     const [agree, setAgree] = useState(false);
     const [
-        createUserWithEmailAndPassword,user
-        ] = useCreateUserWithEmailAndPassword(auth);
+        createUserWithEmailAndPassword, user
+    ] = useCreateUserWithEmailAndPassword(auth);
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -20,8 +21,8 @@ const SignUp = () => {
         password: "",
         general: "",
     })
-    
-    if(user){
+
+    if (user) {
         navigate('/')
     }
     const handleEmail = event => {
@@ -57,9 +58,9 @@ const SignUp = () => {
             setErrors({ ...errors, confirmPass: "Password Not Matched" })
             return;
         }
-        createUserWithEmailAndPassword(userInfo.email,userInfo.password)
+        createUserWithEmailAndPassword(userInfo.email, userInfo.password)
         console.log(user);
-        
+
     }
     return (
         <div className='container'>
@@ -89,9 +90,12 @@ const SignUp = () => {
                     {errors?.confirmPass && <p>{errors.confirmPass}</p>}
                 </Form.Group>
                 <input onClick={() => setAgree(!agree)} type="checkbox" />
-                <label className={`${agree ? '': 'text-danger'}`} htmlFor="terms">Accept all terms and condition</label>
+                <label className={`${agree ? '' : 'text-danger'}`} htmlFor="terms">Accept all terms and condition</label>
                 <Button disabled={!agree} className='w-100 my-3' variant="primary" type="submit">
                     Sign Up
+                </Button>
+                <Button onClick={() => signInWithTwitter()} className='w-100 my-3' variant="primary" type="submit">
+                    twitter
                 </Button>
                 <p>Already have an account?<Link to='/login'>Login</Link></p>
 

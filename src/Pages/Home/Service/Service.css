@@ -1,5 +1,5 @@
 .hover-card:hover{
     transform: translateY(-10px);
     transition: .5s;
-    box-shadow: 0 20px 30px 0 hsla(216, 90%, 44%, 0.712);
+    box-shadow: 0 20px 30px 0 hsla(216, 88%, 50%, 0.712);
 }
