@@ -24,7 +24,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
 
-                        <Nav className='ms-auto'>
+                        <Nav className='ms-auto fw-bold'>
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             {
                                 user ? <button className='btn btn-link text-decoration-none' onClick={signingOut}>SignOut</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>

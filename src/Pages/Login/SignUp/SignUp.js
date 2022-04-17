@@ -6,7 +6,7 @@ import auth from '../../../firebse.init'
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [signInWithTwitter] = useSignInWithTwitter(auth);
+    const [signInWithTwitter, twUser] = useSignInWithTwitter(auth);
      const [agree, setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword, user
@@ -22,7 +22,7 @@ const SignUp = () => {
         general: "",
     })
 
-    if (user) {
+    if (user||twUser) {
         navigate('/')
     }
     const handleEmail = event => {
@@ -62,6 +62,9 @@ const SignUp = () => {
         console.log(user);
 
     }
+    const HandlesignInWithTwitter =()=>{
+        signInWithTwitter();
+    }
     return (
         <div className='container'>
 
@@ -94,8 +97,8 @@ const SignUp = () => {
                 <Button disabled={!agree} className='w-100 my-3' variant="primary" type="submit">
                     Sign Up
                 </Button>
-                <Button onClick={() => signInWithTwitter()} className='w-100 my-3' variant="primary" type="submit">
-                    twitter
+                <Button onClick={HandlesignInWithTwitter} className='w-100 my-3' variant="primary" type="submit">
+                   Sign In with twitter
                 </Button>
                 <p>Already have an account?<Link to='/login'>Login</Link></p>
 
