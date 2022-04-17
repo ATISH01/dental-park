@@ -3,6 +3,8 @@ import { Button, Form } from 'react-bootstrap';
 import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebse.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     
@@ -32,8 +34,10 @@ const Login = () => {
         const password =passwordRef.current.value
         signInWithEmailAndPassword(email,password);
     }
-    const handleReset =()=>{
-        sendPasswordResetEmail();
+    const handleReset =async()=>{
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        toast('Reset link send')
     }
     return (
         <div className='container'>
@@ -58,6 +62,7 @@ const Login = () => {
                 </Button>
                 <p>New to DentalPark?<Link to='/signup' onClick={navigateSignUp} >SignUp</Link></p>
                 <p>ForgetPassword? <button onClick={handleReset} className='btn btn-link'>Reset</button></p>
+                <ToastContainer />
             </Form>
         </div>
     );
