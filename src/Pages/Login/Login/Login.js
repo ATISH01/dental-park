@@ -25,7 +25,7 @@ const Login = () => {
                 </Form.Group>
 
 
-                <Button className='w-100' variant="primary" type="submit">
+                <Button className='w-100 mb-3' variant="primary" type="submit">
                     Login
                 </Button>
                 <p>New to DentalPark?<Link to='/signup' onClick={navigateSignUp} >SignUp</Link></p>
