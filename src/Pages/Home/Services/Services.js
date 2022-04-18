@@ -11,7 +11,10 @@ const Services = () => {
     }, [])
     return (
         <div className='row g-0 service py-5'>
-            <h1 className='text-center mt-4'>Services</h1>
+            <div>
+            <h1 className='text-center mt-4 fw-bold'>Services</h1>
+            <hr className='w-25 mx-auto'/>
+            </div>
             {
                 services.map(service => <Service service={service}></Service>)
             }

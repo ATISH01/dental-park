@@ -13,7 +13,7 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar className='bg-opacity-25' collapseOnSelect expand="lg" bg="info" variant="light">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <div className='d-flex align-items-center'>

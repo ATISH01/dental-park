@@ -1,5 +1,5 @@
 [
-  {"id":1, "serviceName":"RCT", "img":"https://i.ibb.co/v4cNtTp/pic1.png"},
-  {"id":2, "serviceName":"Extraction", "img":"https://i.ibb.co/gtrp1sW/pic2.png"},
-  {"id":3, "serviceName":"Filling", "img":"https://i.ibb.co/RyL8fTq/pic3.png"}
+  {"id":1, "serviceName":"RCT", "img":"https://i.ibb.co/v4cNtTp/pic1.png" ,"description":"Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth. Root canal treatment is not painful and can save a tooth that might otherwise have to be removed completely.", "price":"4000"},
+  {"id":2, "serviceName":"Filling", "img":"https://i.ibb.co/gtrp1sW/pic2.png","description":"On average, you can expect a metal filling to last for about 15 years before needing to be replaced, but the length of time can vary based on several factors, such as if you grind or clench your teeth. ","price":"1000"},
+  {"id":3, "serviceName":"Extraction", "img":"https://i.ibb.co/RyL8fTq/pic3.png","description":"Tooth extraction refers to the complete removal of one or more teeth from the mouth. This is a procedure that is usually performed by a dental surgeon. Milk teeth may be removed from a child's mouth without intervention.","price":"2000"}
 ]

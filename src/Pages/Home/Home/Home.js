@@ -62,7 +62,7 @@ const Home = () => {
       </div>
       <Services></Services>
       <UserExperience></UserExperience>
-      <Footer></Footer>
+  
     </div>
   );
 };

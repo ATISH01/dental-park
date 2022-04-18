@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({service}) => {
-    const {serviceName, img} = service;
+    const {serviceName, img,price,description} = service;
     const navigate=useNavigate()
     const handleButton =()=>{
         navigate("/checkout ")
@@ -15,9 +15,10 @@ const Service = ({service}) => {
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{serviceName}</Card.Title>
+                    <p>Price:{price}</p>
                     <Spinner animation="grow" size="sm" variant="success" />
                     <Card.Text>
-                        Lorem ipsum dolor sit amet consectetur!
+                        <p>{description}</p>
                     </Card.Text>
                     <Button className='mx-auto d-block' onClick={handleButton} variant="primary">Book Now</Button>
                 </Card.Body>

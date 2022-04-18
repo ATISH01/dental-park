@@ -10,7 +10,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <div className='text-center py-4 footer'>
+        <div className='text-center py-5 footer'>
             <Row className='g-0'>
                 <Col xs={12} md={4} >
                     <div className='d-flex align-items-center justify-content-center'>
@@ -23,7 +23,7 @@ const Footer = () => {
                         <p>Phone:84746474</p>
                     </div>
                 </Col>
-                <Col xs={12} md={4} className="text-light mt-2">
+                <Col xs={12} md={4} className="text-light mt-3">
                     <strong className='fs-5'>Visiting Hours</strong> <br />
                     <div className='mt-2'>
                         <span className='me-3'>Sunday - Thursday</span>
@@ -42,7 +42,7 @@ const Footer = () => {
                     </div>
                 </Col>
             </Row>
-
+            <p className='text-light my-3'><small>Copyright @ {year} </small></p>
             {/* <p>Dental Park</p>
             <p>Dr. Sajib</p>
             <p>Phone:+880161718191</p>
