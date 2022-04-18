@@ -77,8 +77,8 @@ const SignUp = () => {
             <Form onSubmit={handleFormSubmit} >
                 <h1>Sign Up</h1>
                 <img className='ms-4 mb-3' width={230} src="" alt="" />
-                <Form.Group className="mb-2">
-                    <Form.Label>Name</Form.Label>
+                <Form.Group className=" mb-2">
+                    <Form.Label >Name</Form.Label>
                     <Form.Control className='border-0 bg-info p-2 text-dark bg-opacity-10' type="text" placeholder="Name" />
 
                 </Form.Group>
