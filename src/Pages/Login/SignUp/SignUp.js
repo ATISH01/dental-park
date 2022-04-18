@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init'
@@ -72,7 +72,10 @@ const SignUp = () => {
         
     }
     return (
-        <div className='container w-50 mx-auto my-5 bg-light border border-1 rounded p-5'>
+        <Row xs={1} md={3} className="g-0">
+        <col />
+        <Col>
+        <div className='container  mx-auto my-5 bg-light border border-1 rounded p-5'>
 
             <Form onSubmit={handleFormSubmit} >
                 <h1>Sign Up</h1>
@@ -110,6 +113,9 @@ const SignUp = () => {
 
             </Form>
         </div>
+        </Col>
+        </Row>
+
     );
 };
 
