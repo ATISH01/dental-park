@@ -1,11 +1,13 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const Blog = () => {
     return (
-        <div>
+        <Row md={3} className="g-0">
+            <Col xs={12} md={8} className="mx-auto p-2">
             <div className='mb-4'> 
-            <p className='fs-4 text-center my-3'>Difference between Authorization and Authentication. <hr className='w-50 mx-auto' /></p>
-            <table className="table table-success table-striped mx-auto w-50">
+            <p className='fs-4 text-center my-3'>Difference between Authorization and Authentication. <hr className=' mx-auto' /></p>
+            <table className="table table-success table-striped mx-auto ">
                 <thead>
                     <tr>
                         <td>Authentication</td>
@@ -29,9 +31,9 @@ const Blog = () => {
             </table>
             </div>
 
-            <div className='border border-2 rounded-2 mt-3 p-2 w-50 mx-auto'>
+            <div className='border border-2 rounded-2 mt-3 p-2 mx-auto'>
                 <p className='fs-4 text-center mt-1'>Why you are using firebase?What other options do you have to implement authentication?</p>
-                <p>We use firebase to validate user by authentication and authoraization.Also we can host and deploy our website.We can use database in firebase.</p> <br />
+                <p>We use firebase to validate user by authentication and authoraization.Also we can host and deploy our website.We can use database in firebase.It has rich documentation.</p> <br />
                 <article>Besides firebase other options are</article>
                 <p>Parse ;
                     Back4app ;
@@ -51,15 +53,16 @@ const Blog = () => {
             </div>
             <p>
             </p>
-            <div className='border border-2 rounded-2 my-3 p-2 w-50 mx-auto'>
-                <article className='fs-5 text-center mt-1'>
-                firebase provide other than authentication <br/>
-
+            <div className='border border-2 rounded-2 my-3 p-2  mx-auto'>
+            <p className='fs-4  mt-1'>What other services does firebase provide other than authentication?</p>
+                <article className=' mt-1'>
+                Firebase is mostly use for Authentication system for web app,android app, ios app etc.It also provides many other reliable feature. <br />
                 It provides --
                 1.Cloud Firestore. 2.Cloud Functions. 3.Hosting. 4.Cloud Storage. 5.Google Analytics. 6.Predictions. 7.Cloud Messaging.
                 </article>
                 </div>
-        </div>
+                </Col>
+        </Row>
     );
 };
 

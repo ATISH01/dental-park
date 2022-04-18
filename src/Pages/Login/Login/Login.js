@@ -46,8 +46,7 @@ const Login = () => {
     }
     return (
         <Row xs={1} md={3} className="g-0">
-            <Col>1 of 3</Col>
-            <Col>
+            <Col className='mx-auto'>
                 <div className='container mx-auto my-5 bg-light  border border-1 rounded p-5'>
 
                     <Form onSubmit={handleLoginForm}>
@@ -75,7 +74,6 @@ const Login = () => {
                     </Form>
                 </div>
             </Col>
-            <Col>3 of 3</Col>
         </Row>
 
     );

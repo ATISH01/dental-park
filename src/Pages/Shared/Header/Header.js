@@ -24,10 +24,11 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
 
+
                         <Nav className='ms-auto fw-bold'>
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             {
-                                user ? <button className='btn btn-link text-decoration-none text-dark' onClick={signingOut}>SignOut</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                user ? <Nav.Link onClick={signingOut} as={Link} to="/login">SignOut</Nav.Link> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }
                             <Nav.Link as={Link} to="/checkout">CheckOut</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
